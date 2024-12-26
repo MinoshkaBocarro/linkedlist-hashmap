@@ -9,6 +9,7 @@ console.log(new Node());
 console.log(linkedListTest.append(1));
 console.log(linkedListTest.head);
 console.log(linkedListTest.tail);
+console.log(linkedListTest.list);
 console.log(linkedListTest.append(2));
 console.log(linkedListTest.head);
 console.log(linkedListTest.list);
