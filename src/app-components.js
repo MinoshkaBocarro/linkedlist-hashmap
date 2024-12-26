@@ -25,6 +25,13 @@ class LinkedList {
       // pay attention to this for potential bugs
     }
   }
+
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.nextNode = this.list;
+    this.head = newNode;
+    this.list = newNode;
+  }
 }
 
 export { LinkedList, Node };
