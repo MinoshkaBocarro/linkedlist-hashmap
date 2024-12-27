@@ -45,7 +45,6 @@ class LinkedList {
       return 0;
     }
     let currentNode = this.list;
-    console.log(currentNode);
     let total = 1;
     while (currentNode.nextNode !== null) {
       total += 1;
@@ -61,6 +60,21 @@ class LinkedList {
   tail() {
     return this.tailNode;
   }
-}
 
+  at(index) {
+    if (this.headNode === null) {
+      return 'index not applicable';
+    }
+    let currentNode = this.list;
+    let i = 0;
+    while (i < index) {
+      if (currentNode.nextNode === null) {
+        return 'index not applicable';
+      }
+      currentNode = currentNode.nextNode;
+      i++;
+    }
+    return currentNode;
+  }
+}
 export { LinkedList, Node };

@@ -217,7 +217,7 @@ export default [
       //variables
       'one-var': ['error', 'never'],
       'no-multi-assign': 'error',
-      'no-plusplus': 'error',
+      // 'no-plusplus': 'error',
       'max-len': [
         'error',
         100,
