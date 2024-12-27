@@ -9,19 +9,19 @@ class LinkedList {
   list = {};
 
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.headNode = null;
+    this.tailNode = null;
   }
 
   append(value) {
     const newNode = new Node(value);
-    if (this.head === null) {
+    if (this.headNode === null) {
       this.list = newNode;
-      this.head = this.list;
-      this.tail = this.list;
+      this.headNode = this.list;
+      this.tailNode = this.list;
     } else {
-      this.tail.nextNode = newNode;
-      this.tail = newNode;
+      this.tailNode.nextNode = newNode;
+      this.tailNode = newNode;
       // pay attention to this for potential bugs
     }
   }
@@ -29,7 +29,7 @@ class LinkedList {
   prepend(value) {
     const newNode = new Node(value);
     newNode.nextNode = this.list;
-    this.head = newNode;
+    this.headNode = newNode;
     this.list = newNode;
   }
 
@@ -42,6 +42,14 @@ class LinkedList {
 
   size() {
     return this.listTraversal(this.list);
+  }
+
+  head() {
+    return this.headNode;
+  }
+
+  tail() {
+    return this.tailNode;
   }
 }
 
