@@ -32,6 +32,17 @@ class LinkedList {
     this.head = newNode;
     this.list = newNode;
   }
+
+  listTraversal(node) {
+    if (node.nextNode === null) {
+      return 1;
+    }
+    return 1 + this.listTraversal(node.nextNode);
+  }
+
+  size() {
+    return this.listTraversal(this.list);
+  }
 }
 
 export { LinkedList, Node };
