@@ -41,7 +41,17 @@ class LinkedList {
   }
 
   size() {
-    return this.listTraversal(this.list);
+    if (this.headNode === null) {
+      return 0;
+    }
+    let currentNode = this.list;
+    console.log(currentNode);
+    let total = 1;
+    while (currentNode.nextNode !== null) {
+      total += 1;
+      currentNode = currentNode.nextNode;
+    }
+    return total;
   }
 
   head() {

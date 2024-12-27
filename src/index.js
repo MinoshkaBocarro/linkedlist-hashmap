@@ -6,6 +6,7 @@ import { LinkedList, Node } from './app-components';
 const linkedListTest = new LinkedList();
 console.log(linkedListTest);
 console.log(new Node());
+console.log(linkedListTest.size());
 console.log(linkedListTest.append(1));
 console.log(linkedListTest.headNode);
 console.log(linkedListTest.tailNode);
