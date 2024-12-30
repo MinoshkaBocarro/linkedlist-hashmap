@@ -52,3 +52,6 @@ console.log(linkedListTest.list);
 console.log(linkedListTest.pop());
 console.log(linkedListTest.tailNode);
 console.log(linkedListTest.list);
+console.log(linkedListTest.contains(2));
+console.log(linkedListTest.contains('eighty'));
+console.log(linkedListTest.size());
