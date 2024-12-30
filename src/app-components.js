@@ -102,5 +102,21 @@ class LinkedList {
     }
     return false;
   }
+
+  find(value) {
+    if (this.headNode === null) {
+      return null;
+    }
+    let currentNode = this.list;
+    let index = 0;
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return index;
+      }
+      currentNode = currentNode.nextNode;
+      index += 1;
+    }
+    return null;
+  }
 }
 export { LinkedList, Node };
