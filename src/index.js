@@ -48,3 +48,7 @@ console.log(linkedListTest.head());
 console.log(linkedListTest.tail());
 console.log(linkedListTest.at(8));
 console.log(linkedListTest.at(56));
+console.log(linkedListTest.list);
+console.log(linkedListTest.pop());
+console.log(linkedListTest.tailNode);
+console.log(linkedListTest.list);
