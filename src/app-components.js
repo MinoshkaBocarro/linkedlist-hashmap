@@ -153,5 +153,30 @@ class LinkedList {
     }
     return this.list;
   }
+
+  removeAt(index) {
+    if (index === 0) {
+      const newList = this.list.nextNode;
+      this.list = newList;
+    } else {
+      let currentNode = this.list;
+      let i = 0;
+      while (i < index - 1) {
+        if (currentNode.nextNode === null) {
+          return 'index exceeds list length';
+        }
+        currentNode = currentNode.nextNode;
+        i++;
+      }
+      if (currentNode.nextNode.nextNode === null) {
+        this.tailNode = currentNode;
+        currentNode.nextNode = null;
+      } else {
+        const splitNode = currentNode.nextNode.nextNode;
+        currentNode.nextNode = splitNode;
+      }
+    }
+    return this.list;
+  }
 }
 export { LinkedList, Node };
