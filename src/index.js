@@ -59,3 +59,4 @@ console.log(linkedListTest.find(2));
 console.log(linkedListTest.find(3));
 console.log(linkedListTest.find(-4));
 console.log(linkedListTest.find(0));
+console.log(linkedListTest.toString());

@@ -33,13 +33,6 @@ class LinkedList {
     this.list = newNode;
   }
 
-  listTraversal(node) {
-    if (node.nextNode === null) {
-      return 1;
-    }
-    return 1 + this.listTraversal(node.nextNode);
-  }
-
   size() {
     if (this.headNode === null) {
       return 0;
@@ -117,6 +110,23 @@ class LinkedList {
       index += 1;
     }
     return null;
+  }
+
+  listTraversal(node) {
+    if (node === null) {
+      return ' -> null';
+    }
+    if (this.headNode === null) {
+      return 'null';
+    }
+    if (node === this.headNode) {
+      return `( ${node.value} )${this.listTraversal(node.nextNode)}`;
+    }
+    return ` -> ( ${node.value} )${this.listTraversal(node.nextNode)}`;
+  }
+
+  toString() {
+    return this.listTraversal(this.list);
   }
 }
 export { LinkedList, Node };
