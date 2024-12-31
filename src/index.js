@@ -60,3 +60,8 @@ console.log(linkedListTest.find(3));
 console.log(linkedListTest.find(-4));
 console.log(linkedListTest.find(0));
 console.log(linkedListTest.toString());
+console.log(linkedListTest.insertAt('1 value', 0));
+console.log(linkedListTest.insertAt('2 value', 2));
+console.log(linkedListTest.insertAt('3 value', 8));
+console.log(linkedListTest.size());
+console.log(linkedListTest.insertAt('4 value', 11));

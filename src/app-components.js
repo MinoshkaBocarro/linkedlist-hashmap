@@ -128,5 +128,26 @@ class LinkedList {
   toString() {
     return this.listTraversal(this.list);
   }
+
+  insertAt(value, index) {
+    if (index === 0) {
+      this.prepend(value);
+    } else {
+      const newNode = new Node(value);
+      let currentNode = this.list;
+      let i = 0;
+      while (i < index - 1) {
+        if (currentNode.nextNode === null) {
+          return 'index exceeds list length';
+        }
+        currentNode = currentNode.nextNode;
+        i++;
+      }
+      const splitNode = currentNode.nextNode;
+      currentNode.nextNode = newNode;
+      currentNode.nextNode.nextNode = splitNode;
+    }
+    return this.list;
+  }
 }
 export { LinkedList, Node };
