@@ -133,7 +133,6 @@ class LinkedList {
     if (index === 0) {
       this.prepend(value);
     } else {
-      const newNode = new Node(value);
       let currentNode = this.list;
       let i = 0;
       while (i < index - 1) {
@@ -143,9 +142,14 @@ class LinkedList {
         currentNode = currentNode.nextNode;
         i++;
       }
-      const splitNode = currentNode.nextNode;
-      currentNode.nextNode = newNode;
-      currentNode.nextNode.nextNode = splitNode;
+      if (currentNode.nextNode === null) {
+        this.append(value);
+      } else {
+        const newNode = new Node(value);
+        const splitNode = currentNode.nextNode;
+        currentNode.nextNode = newNode;
+        currentNode.nextNode.nextNode = splitNode;
+      }
     }
     return this.list;
   }

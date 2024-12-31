@@ -63,5 +63,7 @@ console.log(linkedListTest.toString());
 console.log(linkedListTest.insertAt('1 value', 0));
 console.log(linkedListTest.insertAt('2 value', 2));
 console.log(linkedListTest.insertAt('3 value', 8));
+console.log(linkedListTest.insertAt('4 value', 10));
+console.log(linkedListTest.tailNode);
 console.log(linkedListTest.size());
-console.log(linkedListTest.insertAt('4 value', 11));
+console.log(linkedListTest.insertAt('5 value', 12));
