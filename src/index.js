@@ -77,7 +77,16 @@ import { createHashMap } from './hash-map';
 // console.log(linkedListTest.tailNode);
 
 const newHashMap = createHashMap();
-
-newHashMap.set('boring', 'news');
 console.log(newHashMap.hashMap);
-console.log(newHashMap.hashMap[13]);
+console.log(newHashMap.set('apple', 'red'));
+console.log(newHashMap.set('banana', 'yellow'));
+console.log(newHashMap.set('carrot', 'orange'));
+console.log(newHashMap.set('dog', 'brown'));
+console.log(newHashMap.set('elephant', 'gray'));
+console.log(newHashMap.set('frog', 'green'));
+console.log(newHashMap.set('grape', 'purple'));
+console.log(newHashMap.set('hat', 'black'));
+console.log(newHashMap.set('ice cream', 'white'));
+console.log(newHashMap.set('jacket', 'blue'));
+console.log(newHashMap.set('kite', 'pink'));
+console.log(newHashMap.set('lion', 'golden'));

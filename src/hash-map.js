@@ -3,6 +3,7 @@ import { LinkedListForHashMap } from './linked-list';
 function createHashMap() {
   const LOAD_FACTOR = 0.75;
   let capacity = 16;
+  let length = 0;
 
   const hashMap = new Array(16);
 
@@ -20,7 +21,7 @@ function createHashMap() {
   function set(key, value) {
     const hashCode = hash(key);
 
-    if (hashCode < 0 || hashCode >= hashMap.length) {
+    if (hashCode < 0 || hashCode >= capacity) {
       throw new Error('Trying to access index out of bounds');
     }
 
@@ -35,8 +36,15 @@ function createHashMap() {
       bucket = hashMap[hashCode];
       bucket.append({ key, value });
     }
-    // check array length
-    // if length increase capacity, increase capacity
+
+    length += 1;
+    if (length >= LOAD_FACTOR * capacity) {
+      const extendArray = new Array(capacity);
+      hashMap.push(...extendArray);
+      capacity = hashMap.length;
+    }
+
+    return hashMap;
   }
 
   return { set, hashMap };
