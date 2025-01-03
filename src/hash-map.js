@@ -51,7 +51,13 @@ function createHashMap() {
     }
   }
 
-  return { set };
+  function get(key) {
+    const { bucket } = getBucket(key);
+
+    return bucket.get(key);
+  }
+
+  return { set, get, hashMap };
 }
 
 export { createHashMap };
