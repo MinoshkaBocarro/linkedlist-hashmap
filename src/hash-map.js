@@ -31,11 +31,15 @@ function createHashMap() {
         bucket.append({ key, value });
       }
     } else {
-      bucket = new LinkedListForHashMap();
+      hashMap[hashCode] = new LinkedListForHashMap();
+      bucket = hashMap[hashCode];
+      bucket.append({ key, value });
     }
     // check array length
     // if length increase capacity, increase capacity
   }
 
-  return { set };
+  return { set, hashMap };
 }
+
+export { createHashMap };

@@ -1,5 +1,6 @@
 import 'normalize.css';
 import './style.css';
+import { createHashMap } from './hash-map';
 
 // import { LinkedList } from './linked-list';
 
@@ -74,3 +75,9 @@ import './style.css';
 // console.log(linkedListTest.size());
 // console.log(linkedListTest.removeAt(9));
 // console.log(linkedListTest.tailNode);
+
+const newHashMap = createHashMap();
+
+newHashMap.set('boring', 'news');
+console.log(newHashMap.hashMap);
+console.log(newHashMap.hashMap[13]);
