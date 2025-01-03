@@ -18,14 +18,20 @@ function createHashMap() {
     return hashCode;
   }
 
-  function set(key, value) {
+  function getBucket(key) {
     const hashCode = hash(key);
 
     if (hashCode < 0 || hashCode >= capacity) {
       throw new Error('Trying to access index out of bounds');
     }
 
-    let bucket = hashMap[hashCode];
+    const bucket = hashMap[hashCode];
+
+    return { hashCode, bucket };
+  }
+
+  function set(key, value) {
+    const { hashCode, bucket } = getBucket(key);
 
     if (bucket) {
       if (!bucket.replace({ key, value })) {
@@ -33,21 +39,19 @@ function createHashMap() {
       }
     } else {
       hashMap[hashCode] = new LinkedListForHashMap();
-      bucket = hashMap[hashCode];
-      bucket.append({ key, value });
+      hashMap[hashCode].append({ key, value });
     }
 
     length += 1;
     if (length >= LOAD_FACTOR * capacity) {
       const extendArray = new Array(capacity);
       hashMap.push(...extendArray);
+      // rehash here
       capacity = hashMap.length;
     }
-
-    return hashMap;
   }
 
-  return { set, hashMap };
+  return { set };
 }
 
 export { createHashMap };
