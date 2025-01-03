@@ -196,6 +196,20 @@ class LinkedListForHashMap extends LinkedList {
     }
     return null;
   }
+
+  get(key) {
+    if (this.headNode === null) {
+      return null;
+    }
+    let currentNode = this.list;
+    while (currentNode !== null) {
+      if (currentNode.key === key) {
+        return currentNode.value;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return null;
+  }
 }
 
 export { LinkedList, Node, LinkedListForHashMap };
