@@ -179,4 +179,22 @@ class LinkedList {
     return this.list;
   }
 }
-export { LinkedList, Node };
+
+class LinkedListForHashMap extends LinkedList {
+  replace(key, value) {
+    if (this.headNode === null) {
+      return null;
+    }
+    let currentNode = this.list;
+    while (currentNode !== null) {
+      if (currentNode.key === key) {
+        currentNode.value = value;
+        return true;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return null;
+  }
+}
+
+export { LinkedList, Node, LinkedListForHashMap };
