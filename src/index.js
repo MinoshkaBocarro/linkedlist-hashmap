@@ -82,6 +82,8 @@ newHashMap.set('apple', 'red');
 console.log(newHashMap.hashMap);
 console.log(newHashMap.get('apple'));
 console.log(newHashMap.get('alppe'));
+console.log(newHashMap.has('apple'));
+console.log(newHashMap.has('alppe'));
 // console.log(newHashMap.set('carrot', 'orange'));
 // console.log(newHashMap.set('dog', 'brown'));
 // console.log(newHashMap.set('elephant', 'gray'));

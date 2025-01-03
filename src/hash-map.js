@@ -57,7 +57,16 @@ function createHashMap() {
     return bucket.get(key);
   }
 
-  return { set, get, hashMap };
+  function has(key) {
+    const { bucket } = getBucket(key);
+
+    if (bucket.get(key)) {
+      return true;
+    }
+    return false;
+  }
+
+  return { set, get, has, hashMap };
 }
 
 export { createHashMap };
