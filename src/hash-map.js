@@ -73,6 +73,7 @@ function createHashMap() {
 
     if (index !== null) {
       bucket.removeAt(index);
+      length -= 1;
       return true;
     }
 
