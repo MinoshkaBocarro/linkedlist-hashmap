@@ -66,7 +66,20 @@ function createHashMap() {
     return false;
   }
 
-  return { set, get, has, hashMap };
+  function remove(key) {
+    const { bucket } = getBucket(key);
+
+    const index = bucket.find({ key });
+
+    if (index !== null) {
+      bucket.removeAt(index);
+      return true;
+    }
+
+    return false;
+  }
+
+  return { set, get, has, remove, hashMap };
 }
 
 export { createHashMap };
