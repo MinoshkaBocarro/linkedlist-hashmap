@@ -98,13 +98,15 @@ class LinkedList {
   }
 
   find(value) {
+    const searchKey = Object.keys(value)[0];
+
     if (this.headNode === null) {
       return null;
     }
     let currentNode = this.list;
     let index = 0;
     while (currentNode !== null) {
-      if (currentNode.value === value) {
+      if (currentNode[`${searchKey}`] === value[`${searchKey}`]) {
         return index;
       }
       currentNode = currentNode.nextNode;
