@@ -107,7 +107,15 @@ function createHashMap() {
     return hashMapArray;
   }
 
-  return { set, get, has, remove, length, clear, hashMap };
+  function values() {
+    return traverseMap('values');
+  }
+
+  function entries() {
+    return traverseMap('entries');
+  }
+
+  return { set, get, has, remove, length, clear, values, entries, hashMap };
 }
 
 export { createHashMap };
