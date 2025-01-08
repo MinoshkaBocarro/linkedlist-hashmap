@@ -161,6 +161,12 @@ class LinkedList {
     if (index === 0) {
       const newList = this.list.nextNode;
       this.list = newList;
+      this.headNode = newList;
+      if (newList === null) {
+        this.tailNode = null;
+      } else if (newList.nextNode === null) {
+        this.tailNode = newList;
+      }
     } else {
       let currentNode = this.list;
       let i = 0;
