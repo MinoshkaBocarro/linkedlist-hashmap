@@ -235,6 +235,10 @@ class LinkedListForHashMap extends LinkedList {
     }
     return nodeValue.concat(this.valuesArray(node.nextNode, arrayPopulation));
   }
+
+  getValuesArray() {
+    return this.valuesArray(this.list, ['value']);
+  }
 }
 
 export { LinkedList, Node, LinkedListForHashMap };
