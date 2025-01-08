@@ -239,6 +239,10 @@ class LinkedListForHashMap extends LinkedList {
   getValuesArray() {
     return this.valuesArray(this.list, ['value']);
   }
+
+  getKeysAndValuesArray() {
+    return this.valuesArray(this.list, ['key', 'value']);
+  }
 }
 
 export { LinkedList, Node, LinkedListForHashMap };
