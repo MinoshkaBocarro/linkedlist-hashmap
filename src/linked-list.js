@@ -218,6 +218,23 @@ class LinkedListForHashMap extends LinkedList {
     }
     return null;
   }
+
+  valuesArray(node, arrayPopulation) {
+    if (node === null) {
+      return [];
+    }
+    let nodeValue;
+    if (arrayPopulation.length > 1) {
+      const arr = [];
+      arrayPopulation.forEach((term) => {
+        arr.push(node[`${term}`]);
+      });
+      nodeValue = [arr];
+    } else {
+      nodeValue = [node[`${arrayPopulation[0]}`]];
+    }
+    return nodeValue.concat(this.valuesArray(node.nextNode, arrayPopulation));
+  }
 }
 
 export { LinkedList, Node, LinkedListForHashMap };
