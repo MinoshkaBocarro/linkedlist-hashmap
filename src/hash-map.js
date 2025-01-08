@@ -3,7 +3,7 @@ import { LinkedListForHashMap } from './linked-list';
 function createHashMap() {
   const LOAD_FACTOR = 0.75;
   let capacity = 16;
-  let length = 0;
+  let size = 0;
 
   const hashMap = new Array(16);
 
@@ -42,8 +42,8 @@ function createHashMap() {
       hashMap[hashCode].append({ key, value });
     }
 
-    length += 1;
-    if (length >= LOAD_FACTOR * capacity) {
+    size += 1;
+    if (size >= LOAD_FACTOR * capacity) {
       const extendArray = new Array(capacity);
       hashMap.push(...extendArray);
       // rehash here
@@ -73,14 +73,18 @@ function createHashMap() {
 
     if (index !== null) {
       bucket.removeAt(index);
-      length -= 1;
+      size -= 1;
       return true;
     }
 
     return false;
   }
 
-  return { set, get, has, remove, hashMap };
+  function length() {
+    return size;
+  }
+
+  return { set, get, has, remove, length, hashMap };
 }
 
 export { createHashMap };
