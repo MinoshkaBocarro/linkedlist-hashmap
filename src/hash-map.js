@@ -91,6 +91,22 @@ function createHashMap() {
     capacity = 16;
   }
 
+  function traverseMap(searchItem) {
+    let hashMapArray = [];
+
+    hashMap.forEach((bucket) => {
+      if (bucket && bucket.headNode !== null) {
+        if (searchItem === 'values') {
+          hashMapArray = hashMapArray.concat(bucket.getValuesArray());
+        } else {
+          hashMapArray = hashMapArray.concat(bucket.getKeysAndValuesArray());
+        }
+      }
+    });
+
+    return hashMapArray;
+  }
+
   return { set, get, has, remove, length, clear, hashMap };
 }
 
