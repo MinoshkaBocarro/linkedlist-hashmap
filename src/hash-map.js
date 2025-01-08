@@ -5,7 +5,7 @@ function createHashMap() {
   let capacity = 16;
   let size = 0;
 
-  const hashMap = new Array(16);
+  let hashMap = new Array(16);
 
   function hash(key) {
     let hashCode = 0;
@@ -84,7 +84,13 @@ function createHashMap() {
     return size;
   }
 
-  return { set, get, has, remove, length, hashMap };
+  function clear() {
+    hashMap = new Array(16);
+    size = 0;
+    capacity = 16;
+  }
+
+  return { set, get, has, remove, length, clear, hashMap };
 }
 
 export { createHashMap };

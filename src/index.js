@@ -78,15 +78,23 @@ import { createHashMap } from './hash-map';
 
 const newHashMap = createHashMap();
 console.log(newHashMap.hashMap);
+console.log(newHashMap.length());
 newHashMap.set('apple', 'red');
+console.log(newHashMap.length());
 console.log(newHashMap.hashMap);
 console.log(newHashMap.get('apple'));
 console.log(newHashMap.get('alppe'));
 console.log(newHashMap.has('apple'));
 console.log(newHashMap.has('alppe'));
+console.log(newHashMap.length());
 console.log(newHashMap.remove('apple'));
 console.log(newHashMap.hashMap);
 console.log(newHashMap.remove('alppe'));
+console.log(newHashMap.length());
+console.log(newHashMap.clear());
+console.log(newHashMap.hashMap);
+console.log(newHashMap.length());
+
 // console.log(newHashMap.set('carrot', 'orange'));
 // console.log(newHashMap.set('dog', 'brown'));
 // console.log(newHashMap.set('elephant', 'gray'));
