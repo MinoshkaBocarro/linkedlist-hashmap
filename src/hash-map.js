@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import { LinkedListForHashMap } from './linked-list';
 
 function createHashMap() {
@@ -44,10 +45,8 @@ function createHashMap() {
 
     size += 1;
     if (size >= LOAD_FACTOR * capacity) {
-      const extendArray = new Array(capacity);
-      hashMap.push(...extendArray);
-      // rehash here
-      capacity = hashMap.length;
+      const entriesArray = entries();
+      reHash(entriesArray);
     }
   }
 
@@ -113,6 +112,17 @@ function createHashMap() {
 
   function entries() {
     return traverseMap('entries');
+  }
+
+  function reHash(rehashArray) {
+    hashMap.length = 0;
+    hashMap.length = capacity * 2;
+    size = 0;
+    capacity = capacity * 2;
+
+    rehashArray.forEach((pair) => {
+      set(pair[0], pair[1]);
+    });
   }
 
   return { set, get, has, remove, length, clear, values, entries, hashMap };
